@@ -3,4 +3,56 @@
     <string name="results">results</string>
     <string name="input_statistic">input statistic</string>
     <string name="search">search</string>
+    <string name="tv_win_percentage">PCT:</string>
+    <string name="percentage">%</string>
+    <string name="tv_colon">:</string>
+    <string name="result_deleted">Result was deleted successfully</string>
+    <string name="undo_operation">UNDO</string>
+    <string name="result_recovered">Result was recovered successfully</string>
+    <string name="result_activity_title">Results</string>
+    <string name="tv_date">Date?</string>
+    <string name="btn_date">DATE</string>
+    <string name="spread">spread</string>
+    <string name="home_line">home line</string>
+    <string name="team_total">team total</string>
+    <string name="result">result</string>
+    <string name="guest_line">guest line</string>
+    <string name="add_result">Add result</string>
+    <string name="home_team_name">home team</string>
+    <string name="guest_team_name">guest team</string>
+    <string name="edit_result">Edit result</string>
+
+    <string-array name="arrayOfTeamNames">
+        <item>Atlanta Hawks</item>
+        <item>Boston Celtics</item>
+        <item>Brooklyn Nets</item>
+        <item>Charlotte Hornets</item>
+        <item>Chicago Bulls</item>
+        <item>Cleveland Cavaliers</item>
+        <item>Dallas Mavericks</item>
+        <item>Denver Nuggets</item>
+        <item>Detroit Pistons</item>
+        <item>Golden State Warriors</item>
+        <item>Houston Rockets</item>
+        <item>Indiana Pacers</item>
+        <item>Los Angeles Lakers</item>
+        <item>Los Angeles Clippers</item>
+        <item>Memphis Grizzlies</item>
+        <item>Miami Heat</item>
+        <item>Milwaukee Bucks</item>
+        <item>Minnesota Timberwolves</item>
+        <item>New Orleans Pelicans</item>
+        <item>New York Knicks</item>
+        <item>Oklahoma City Thunder</item>
+        <item>Orlando Magic</item>
+        <item>Philadelphia 76ers</item>
+        <item>Phoenix Suns</item>
+        <item>Portland Trail Blazers</item>
+        <item>Sacramento Kings</item>
+        <item>San Antonio Spurs</item>
+        <item>Toronto Raptors</item>
+        <item>Utah Jazz</item>
+        <item>Washington Wizards</item>
+    </string-array>
+
 </resources>

@@ -60,6 +60,7 @@ public class Repository {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+
         return list;
     }
 

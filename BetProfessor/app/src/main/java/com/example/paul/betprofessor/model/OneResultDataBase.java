@@ -55,6 +55,7 @@ public abstract class OneResultDataBase extends RoomDatabase {
             oneResultDao.insert(new OneResult("17-10-2018", "Golden State Warriors", "117"
                     , "-11.5", "1.13", "Oklahoma City Thunder", "105"
                     , "+11.5", "6.0", "108", "100"));
+
             return null;
         }
     }

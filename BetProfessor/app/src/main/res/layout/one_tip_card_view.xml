@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="4dp"
+    android:layout_marginTop="4dp"
+    android:layout_marginEnd="4dp"
+    app:cardCornerRadius="8dp">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="4dp"
+        android:background="@color/colorCardBackground">
+
+        <ImageView
+            android:id="@+id/iv_team_tips"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="4dp"
+            android:src="@drawable/atlanta_hawks"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_team_name_tips"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="4dp"
+            android:text="Atlanta Hawks"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/iv_team_tips" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="@string/tv_win_percentage"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/tv_team_win_percentage"
+            app:layout_constraintTop_toTopOf="@+id/tv_team_win_percentage" />
+
+        <TextView
+            android:id="@+id/tv_team_win_percentage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/tv_team_name_tips"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="2dp"
+            android:text="30.6"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/textView"
+            app:layout_constraintTop_toTopOf="@+id/textView" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="4dp"
+            android:text="@string/percentage"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/tv_team_name_tips"
+            app:layout_constraintTop_toBottomOf="@+id/tv_team_name_tips" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.v7.widget.CardView>
