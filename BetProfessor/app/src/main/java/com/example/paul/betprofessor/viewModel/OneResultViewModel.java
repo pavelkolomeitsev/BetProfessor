@@ -19,7 +19,7 @@ public class OneResultViewModel extends AndroidViewModel {
         super(application);
 
         repository = new Repository(application);
-        getLastTwentyResults = repository.getGetLastTwentyResults();
+        getLastTwentyResults = repository.getLastTwentyResults();
     }
 
     public void insert(OneResult oneResult){
@@ -38,7 +38,7 @@ public class OneResultViewModel extends AndroidViewModel {
         repository.deleteAllResults();
     }
 
-    public LiveData<List<OneResult>> getGetLastTwentyResults(){
+    public LiveData<List<OneResult>> getLastTwentyResults(){
         return getLastTwentyResults;
     }
 }

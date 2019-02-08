@@ -8,7 +8,6 @@ import android.support.design.button.MaterialButton;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Menu;
 import android.view.View;
 import android.widget.AutoCompleteTextView;
 import android.widget.DatePicker;
@@ -197,10 +196,5 @@ public class EditResultActivity extends AppCompatActivity {
         teams.add(new AutoCompleteTeamItem(listOfTeams[27], R.drawable.toronto_raptors));
         teams.add(new AutoCompleteTeamItem(listOfTeams[28], R.drawable.utah_jazz));
         teams.add(new AutoCompleteTeamItem(listOfTeams[29], R.drawable.washington_wizards));
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        return super.onCreateOptionsMenu(menu);
     }
 }

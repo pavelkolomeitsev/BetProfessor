@@ -21,6 +21,11 @@
     <string name="home_team_name">home team</string>
     <string name="guest_team_name">guest team</string>
     <string name="edit_result">Edit result</string>
+    <string name="delete_all_results">delete all results</string>
+    <string name="dialog_title">Attention!</string>
+    <string name="dialog_message">Do you REALLY want to delete ALL results?</string>
+    <string name="dialog_cancel">cancel</string>
+    <string name="dialog_yes">yes</string>
 
     <string-array name="arrayOfTeamNames">
         <item>Atlanta Hawks</item>

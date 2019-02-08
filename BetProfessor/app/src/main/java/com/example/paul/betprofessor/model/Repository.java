@@ -42,7 +42,7 @@ public class Repository {
         new DeleteAllOneResultAsyncTask(oneResultDao).execute();
     }
 
-    public LiveData<List<OneResult>> getGetLastTwentyResults(){
+    public LiveData<List<OneResult>> getLastTwentyResults(){
         return getLastTwentyResults;
     }
 

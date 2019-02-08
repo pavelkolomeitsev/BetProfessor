@@ -8,7 +8,6 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatSpinner;
-import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.DatePicker;
@@ -199,10 +198,5 @@ public class AddResultActivity extends AppCompatActivity {
 
         homeTeamsList.addAll(1, temp);
         guestTeamsList.addAll(1, temp);
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        return super.onCreateOptionsMenu(menu);
     }
 }

@@ -78,8 +78,8 @@
         android:layout_width="108dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        app:layout_constraintEnd_toStartOf="@+id/til_home_team_total"
-        app:layout_constraintHorizontal_bias="0.5"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/til_edit_home_team_total"
         app:layout_constraintStart_toEndOf="@+id/til_edit_home_spread"
         app:layout_constraintTop_toTopOf="@+id/til_edit_home_spread">
 
@@ -98,10 +98,8 @@
         style="@style/TextInputLayout"
         android:layout_width="108dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
-        app:layout_constraintStart_toEndOf="@+id/til_edit_home_line"
         app:layout_constraintTop_toTopOf="@+id/til_edit_home_line">
 
         <android.support.design.widget.TextInputEditText
@@ -138,7 +136,7 @@
         style="@style/TextInputLayout"
         android:layout_width="80dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="96dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/til_edit_home_spread">
 
@@ -159,9 +157,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/til_edit_guest_team_result"
-        app:layout_constraintEnd_toStartOf="@+id/til_edit_guest_line"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toEndOf="@+id/guideline"
         app:layout_constraintStart_toStartOf="@+id/til_edit_guest_team_result">
 
@@ -181,9 +177,9 @@
         android:layout_width="108dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         app:layout_constraintBottom_toBottomOf="@+id/til_edit_guest_spread"
-        app:layout_constraintEnd_toStartOf="@+id/til_edit_home_team_total"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintEnd_toStartOf="@+id/til_edit_guest_team_total"
         app:layout_constraintStart_toEndOf="@+id/til_edit_guest_spread">
 
         <android.support.design.widget.TextInputEditText
@@ -201,12 +197,9 @@
         style="@style/TextInputLayout"
         android:layout_width="108dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintBottom_toBottomOf="@+id/til_edit_guest_line"
-        app:layout_constraintEnd_toStartOf="@+id/guideline2"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/til_edit_guest_line">
+        app:layout_constraintEnd_toStartOf="@+id/guideline2">
 
         <android.support.design.widget.TextInputEditText
             android:id="@+id/guest_team_edit_total"
@@ -259,8 +252,8 @@
         android:id="@+id/fab_edit_result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
         android:src="@drawable/ic_edit_result"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
         switch (item.getItemId()) {
             case R.id.search:
+                // implement
                 Toast.makeText(this, "search was clicked", Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.results:
@@ -51,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
                 return true;
             case R.id.input_statistic:
+                // implement
                 Toast.makeText(this, "statistic was clicked", Toast.LENGTH_SHORT).show();
                 return true;
             default:

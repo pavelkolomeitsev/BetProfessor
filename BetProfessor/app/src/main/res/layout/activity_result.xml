@@ -5,12 +5,13 @@
     android:id="@+id/activity_result"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorMainBackground"
     tools:context=".ui.ResultActivity">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_view_result"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:padding="4dp"
         android:scrollbars="vertical" />
 
@@ -19,8 +20,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end|bottom"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
         android:src="@drawable/ic_add_result"
         app:layout_behavior="com.example.paul.betprofessor.ui.helpers.FAB_Float_on_Scroll" />
 
