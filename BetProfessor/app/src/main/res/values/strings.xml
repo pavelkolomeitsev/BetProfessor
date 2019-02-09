@@ -26,6 +26,14 @@
     <string name="dialog_message">Do you REALLY want to delete ALL results?</string>
     <string name="dialog_cancel">cancel</string>
     <string name="dialog_yes">yes</string>
+    <string name="team_total_tips">Team total tips</string>
+    <string name="amount_of_games">amount of games:</string>
+    <string name="average_team_total">average team total</string>
+    <string name="middlemost_result">middlemost result (</string>
+    <string name="last_game">last game</string>
+    <string name="middlemost_measure">middlemost measure:</string>
+    <string name="statistic">statistic</string>
+    <string name="line_tips">Line tips</string>
 
     <string-array name="arrayOfTeamNames">
         <item>Atlanta Hawks</item>

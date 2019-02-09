@@ -48,6 +48,16 @@ public class MainActivity extends AppCompatActivity {
 
         adapter = new TeamTipsAdapter(getListOfTeamTips());
         recyclerView.setAdapter(adapter);
+
+        // implement a click on tipsTeamItem
+        adapter.setOnItemClickListener(new TeamTipsAdapter.onTipsTeamItemClickListener() {
+            @Override
+            public void onItemClick(TeamTipsItem teamTipsItem) {
+                Intent intent = new Intent(MainActivity.this, TeamTipsActivity.class);
+                intent.putExtra(KEY_TEAM_NAME, teamTipsItem.getTeamName());
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
