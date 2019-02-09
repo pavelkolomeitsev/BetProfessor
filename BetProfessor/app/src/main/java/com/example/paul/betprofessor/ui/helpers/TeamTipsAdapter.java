@@ -17,7 +17,7 @@ public class TeamTipsAdapter extends RecyclerView.Adapter<TeamTipsAdapter.TeamTi
     private ArrayList<TeamTipsItem> mList;
     private onTipsTeamItemClickListener listener;
 
-    public class TeamTipsViewHolder extends RecyclerView.ViewHolder {
+    public static class TeamTipsViewHolder extends RecyclerView.ViewHolder {
 
         public ImageView teamLogo;
         public TextView teamName;
@@ -30,7 +30,7 @@ public class TeamTipsAdapter extends RecyclerView.Adapter<TeamTipsAdapter.TeamTi
             teamName = itemView.findViewById(R.id.tv_team_name_tips);
             winPercentage = itemView.findViewById(R.id.tv_team_win_percentage);
 
-            // here we implement a click on tipsTeamItem
+            /*// here we implement a click on tipsTeamItem
             // by helping a reference on a special interface
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -40,7 +40,7 @@ public class TeamTipsAdapter extends RecyclerView.Adapter<TeamTipsAdapter.TeamTi
                         listener.onItemClick(mList.get(position));
                     }
                 }
-            });
+            });*/
         }
     }
 
@@ -70,7 +70,7 @@ public class TeamTipsAdapter extends RecyclerView.Adapter<TeamTipsAdapter.TeamTi
 
     @Override
     public int getItemCount() {
-        return 0;
+        return mList.size();
     }
 
     // it`s a special interface for handling a click on tipsTeamItem

@@ -4,33 +4,48 @@ import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
 import android.support.annotation.NonNull;
 
-import com.example.paul.betprofessor.R;
+import com.example.paul.betprofessor.model.OneResult;
 import com.example.paul.betprofessor.model.Repository;
-import com.example.paul.betprofessor.ui.helpers.TeamTipsItem;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class MainViewModel extends AndroidViewModel {
 
-    private static final String TAG = "MyLog";
-
     private Repository repository;
-    private String mTeamName;
-    private final String[] arrayOfTeamNames;
-    public Double[] arrayOfWinPercentage;
 
     public MainViewModel(@NonNull Application application) {
         super(application);
 
         repository = new Repository(application);
-        arrayOfTeamNames = application.getResources().getStringArray(R.array.arrayOfTeamNames);
     }
 
-    public ArrayList<TeamTipsItem> getListOfTeamTips(){
-        ArrayList<TeamTipsItem> listOfTeamTips = new ArrayList<>();
+    public Double getWinPercentageOfTeam(String teamName){
 
+        Double wins = 0.0;
+        Double games = 0.0;
 
+        List<OneResult> findAllTeamGames = repository.findAllTeamGames(teamName);
 
-        return listOfTeamTips;
+        for (OneResult item: findAllTeamGames) {
+            if ((item.getHomeTeamName().equals(teamName) || item.getGuestTeamName().equals(teamName)) &&
+                    (!item.getHomeResult().equals("") || !item.getGuestResult().equals(""))){
+                games++;
+
+                if (item.getHomeTeamName().equals(teamName) &&
+                        (Integer.parseInt(item.getHomeResult()) > Integer.parseInt(item.getGuestResult()))){
+                    wins++;
+                }
+                else if (item.getGuestTeamName().equals(teamName) &&
+                        (Integer.parseInt(item.getGuestResult()) > Integer.parseInt(item.getHomeResult()))){
+                    wins++;
+                }
+            }
+        }
+
+        if (games == 0.0) return 0.0;
+        else{
+            int temp = (int) ((wins/games) * 1000);
+            return temp / 10.0;
+        }
     }
 }
