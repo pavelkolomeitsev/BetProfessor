@@ -8,10 +8,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.paul.betprofessor.R;
+import com.example.paul.betprofessor.ui.helpers.DialogOnSetNewMeasure;
+import com.example.paul.betprofessor.viewModel.SetMeasureAsyncTask;
 import com.example.paul.betprofessor.viewModel.TeamTipsAsyncTask;
 import com.example.paul.betprofessor.viewModel.TeamTipsViewModel;
 
-public class TeamTipsActivity extends AppCompatActivity {
+public class TeamTipsActivity extends AppCompatActivity implements DialogOnSetNewMeasure.DialogSetNewMeasureListener {
 
     public TextView numberOfGames, averageTeamTotal, serialNumberOfResult1, serialNumberOfResult2;
     public TextView middlemostTeamTotal1, middlemostTeamTotal2, middlemostMeasure;
@@ -80,7 +82,8 @@ public class TeamTipsActivity extends AppCompatActivity {
 
         switch (view.getId()){
             case R.id.btn_set_measures:
-                Toast.makeText(this, "measure", Toast.LENGTH_SHORT).show();
+                DialogOnSetNewMeasure dialog = new DialogOnSetNewMeasure();
+                dialog.show(getSupportFragmentManager(), "dialogOnSetNewMeasure");
                 break;
             case R.id.btn_statistic_team_total:
                 Toast.makeText(this, "team total", Toast.LENGTH_SHORT).show();
@@ -95,5 +98,14 @@ public class TeamTipsActivity extends AppCompatActivity {
                 Toast.makeText(this, "lines", Toast.LENGTH_SHORT).show();
                 break;
         }
+    }
+
+    @Override
+    public void applyNewMeasure(String measure) {
+        // here implement asyncTask to correct measure and last ten results
+        middlemostMeasure.setText(measure);
+
+        SetMeasureAsyncTask task = new SetMeasureAsyncTask(this, measure);
+        task.execute(viewModel);
     }
 }

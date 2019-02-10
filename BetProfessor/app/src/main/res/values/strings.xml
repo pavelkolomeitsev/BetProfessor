@@ -34,6 +34,9 @@
     <string name="middlemost_measure">middlemost measure:</string>
     <string name="statistic">statistic</string>
     <string name="line_tips">Line tips</string>
+    <string name="new_measure">new measure</string>
+    <string name="cancel">cancel</string>
+    <string name="apply">apply</string>
 
     <string-array name="arrayOfTeamNames">
         <item>Atlanta Hawks</item>

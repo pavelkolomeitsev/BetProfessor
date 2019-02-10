@@ -28,7 +28,7 @@ public class DialogOnDeleteAll extends AppCompatDialogFragment {
                 .setPositiveButton(R.string.dialog_yes, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        //listener.onYesClickedButton();
+                        listener.onYesClickedButton();
                     }
                 });
 

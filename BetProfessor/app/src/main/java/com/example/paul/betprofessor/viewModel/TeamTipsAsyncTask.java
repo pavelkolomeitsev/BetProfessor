@@ -9,6 +9,8 @@ import java.lang.ref.WeakReference;
 
 public class TeamTipsAsyncTask extends AsyncTask<TeamTipsViewModel, Void, String[]> {
 
+    public static final int LENGTH_OF_ARRAY = 37;
+
     WeakReference<TeamTipsActivity> weakReference;
 
     public TeamTipsAsyncTask(TeamTipsActivity activity) {
@@ -19,7 +21,7 @@ public class TeamTipsAsyncTask extends AsyncTask<TeamTipsViewModel, Void, String
     @Override
     protected String[] doInBackground(TeamTipsViewModel... viewModels) {
 
-        String[] array = new String[37];
+        String[] array = new String[LENGTH_OF_ARRAY];
         array[0] = viewModels[0].getAmountOfTeamGames();
         array[1] = viewModels[0].getAverageTeamTotal();
         array[2] = viewModels[0].getMiddlemostMeasure();
