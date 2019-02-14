@@ -37,6 +37,12 @@
     <string name="new_measure">new measure</string>
     <string name="cancel">cancel</string>
     <string name="apply">apply</string>
+    <string name="btn_save">save</string>
+    <string name="input_statistic_title">Input statistic</string>
+    <string name="team_total_statistic">Team total statistic</string>
+    <string name="handicap_statistic">Handicap statistic</string>
+    <string name="line_statistic">Line statistic</string>
+    <string name="btn_dialog_ok">ok</string>
 
     <string-array name="arrayOfTeamNames">
         <item>Atlanta Hawks</item>

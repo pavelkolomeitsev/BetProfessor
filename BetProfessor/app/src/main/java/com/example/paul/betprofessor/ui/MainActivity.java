@@ -71,18 +71,20 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
+        Intent intent;
+
         switch (item.getItemId()) {
             case R.id.search:
                 // implement
                 Toast.makeText(this, "search was clicked", Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.results:
-                Intent intent = new Intent(MainActivity.this, ResultActivity.class);
+                intent = new Intent(MainActivity.this, ResultActivity.class);
                 startActivity(intent);
                 return true;
             case R.id.input_statistic:
-                // implement
-                Toast.makeText(this, "statistic was clicked", Toast.LENGTH_SHORT).show();
+                intent = new Intent(MainActivity.this, InputStatisticActivity.class);
+                startActivity(intent);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

@@ -10,8 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".ui.InputStatisticActivity"
+            android:parentActivityName=".ui.MainActivity" />
+        <activity
             android:name=".ui.TeamTipsActivity"
-            android:parentActivityName=".ui.MainActivity"/>
+            android:parentActivityName=".ui.MainActivity" />
         <activity
             android:name=".ui.AddResultActivity"
             android:parentActivityName=".ui.ResultActivity" />

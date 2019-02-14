@@ -1,7 +1,9 @@
 package com.example.paul.betprofessor.ui;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
@@ -12,6 +14,12 @@ import com.example.paul.betprofessor.ui.helpers.DialogOnSetNewMeasure;
 import com.example.paul.betprofessor.viewModel.SetMeasureAsyncTask;
 import com.example.paul.betprofessor.viewModel.TeamTipsAsyncTask;
 import com.example.paul.betprofessor.viewModel.TeamTipsViewModel;
+
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class TeamTipsActivity extends AppCompatActivity implements DialogOnSetNewMeasure.DialogSetNewMeasureListener {
 
@@ -80,22 +88,129 @@ public class TeamTipsActivity extends AppCompatActivity implements DialogOnSetNe
 
     public void onClick(View view){
 
+        FileInputStream fis = null;
+        StringBuilder sb = null;
+        AlertDialog alertDialog;
+
         switch (view.getId()){
             case R.id.btn_set_measures:
                 DialogOnSetNewMeasure dialog = new DialogOnSetNewMeasure();
                 dialog.show(getSupportFragmentManager(), "dialogOnSetNewMeasure");
                 break;
             case R.id.btn_statistic_team_total:
-                Toast.makeText(this, "team total", Toast.LENGTH_SHORT).show();
+                try {
+                    fis = openFileInput(InputStatisticActivity.TEAM_TOTAL);
+                    InputStreamReader isr = new InputStreamReader(fis);
+                    BufferedReader br = new BufferedReader(isr);
+                    sb = new StringBuilder();
+                    sb.append("");
+                    String text;
+
+                    while ((text = br.readLine()) != null){
+                        sb.append(text).append("\n");
+                    }
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } finally {
+                    if (fis != null){
+                        try {
+                            fis.close();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+
+                alertDialog = new AlertDialog.Builder(this)
+                        .setTitle(R.string.team_total_statistic)
+                        .setMessage(sb)
+                        .setPositiveButton(R.string.btn_dialog_ok, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+
+                            }
+                        }).create();
+                alertDialog.show();
                 break;
             case R.id.btn_statistic_handicap:
-                Toast.makeText(this, "handicap", Toast.LENGTH_SHORT).show();
+                try {
+                    fis = openFileInput(InputStatisticActivity.HANDICAP);
+                    InputStreamReader isr = new InputStreamReader(fis);
+                    BufferedReader br = new BufferedReader(isr);
+                    sb = new StringBuilder();
+                    sb.append("");
+                    String text;
+
+                    while ((text = br.readLine()) != null){
+                        sb.append(text).append("\n");
+                    }
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } finally {
+                    if (fis != null){
+                        try {
+                            fis.close();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+
+                alertDialog = new AlertDialog.Builder(this)
+                        .setTitle(R.string.handicap_statistic)
+                        .setMessage(sb)
+                        .setPositiveButton(R.string.btn_dialog_ok, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+
+                            }
+                        }).create();
+                alertDialog.show();
                 break;
             case R.id.btn_get_team_results:
+                // must be implemented!!!
                 Toast.makeText(this, "team results", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_statistic_line:
-                Toast.makeText(this, "lines", Toast.LENGTH_SHORT).show();
+                try {
+                    fis = openFileInput(InputStatisticActivity.LINE);
+                    InputStreamReader isr = new InputStreamReader(fis);
+                    BufferedReader br = new BufferedReader(isr);
+                    sb = new StringBuilder();
+                    sb.append("");
+                    String text;
+
+                    while ((text = br.readLine()) != null){
+                        sb.append(text).append("\n");
+                    }
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } finally {
+                    if (fis != null){
+                        try {
+                            fis.close();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+
+                alertDialog = new AlertDialog.Builder(this)
+                        .setTitle(R.string.line_statistic)
+                        .setMessage(sb)
+                        .setPositiveButton(R.string.btn_dialog_ok, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+
+                            }
+                        }).create();
+                alertDialog.show();
                 break;
         }
     }
