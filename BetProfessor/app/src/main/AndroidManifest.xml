@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".ui.TeamResultsActivity"
+            android:parentActivityName=".ui.MainActivity" />
+        <activity
             android:name=".ui.SearchForTeamActivity"
             android:parentActivityName=".ui.MainActivity" />
         <activity

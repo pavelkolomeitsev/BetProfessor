@@ -7,7 +7,6 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.paul.betprofessor.R;
 import com.example.paul.betprofessor.ui.helpers.DialogOnSetNewMeasure;
@@ -22,6 +21,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class TeamTipsActivity extends AppCompatActivity implements DialogOnSetNewMeasure.DialogSetNewMeasureListener {
+
+    public static final String KEY_TEAM_NAME = "betprofessor.KEY_TEAM_NAME";
 
     public TextView numberOfGames, averageTeamTotal, serialNumberOfResult1, serialNumberOfResult2;
     public TextView middlemostTeamTotal1, middlemostTeamTotal2, middlemostMeasure;
@@ -41,7 +42,7 @@ public class TeamTipsActivity extends AppCompatActivity implements DialogOnSetNe
         onSetValues();
     }
 
-    private void onInitialize(){
+    private void onInitialize() {
 
         Intent intent = getIntent();
         teamName = intent.getStringExtra(MainActivity.KEY_TEAM_NAME);
@@ -80,19 +81,19 @@ public class TeamTipsActivity extends AppCompatActivity implements DialogOnSetNe
         tenthGameHandicap = findViewById(R.id.tenth_game_handicap);
     }
 
-    private void onSetValues(){
+    private void onSetValues() {
 
         TeamTipsAsyncTask task = new TeamTipsAsyncTask(this);
         task.execute(viewModel);
     }
 
-    public void onClick(View view){
+    public void onClick(View view) {
 
         FileInputStream fis = null;
         StringBuilder sb = null;
         AlertDialog alertDialog;
 
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.btn_set_measures:
                 DialogOnSetNewMeasure dialog = new DialogOnSetNewMeasure();
                 dialog.show(getSupportFragmentManager(), "dialogOnSetNewMeasure");
@@ -106,7 +107,7 @@ public class TeamTipsActivity extends AppCompatActivity implements DialogOnSetNe
                     sb.append("");
                     String text;
 
-                    while ((text = br.readLine()) != null){
+                    while ((text = br.readLine()) != null) {
                         sb.append(text).append("\n");
                     }
                 } catch (FileNotFoundException e) {
@@ -114,7 +115,7 @@ public class TeamTipsActivity extends AppCompatActivity implements DialogOnSetNe
                 } catch (IOException e) {
                     e.printStackTrace();
                 } finally {
-                    if (fis != null){
+                    if (fis != null) {
                         try {
                             fis.close();
                         } catch (IOException e) {
@@ -143,7 +144,7 @@ public class TeamTipsActivity extends AppCompatActivity implements DialogOnSetNe
                     sb.append("");
                     String text;
 
-                    while ((text = br.readLine()) != null){
+                    while ((text = br.readLine()) != null) {
                         sb.append(text).append("\n");
                     }
                 } catch (FileNotFoundException e) {
@@ -151,7 +152,7 @@ public class TeamTipsActivity extends AppCompatActivity implements DialogOnSetNe
                 } catch (IOException e) {
                     e.printStackTrace();
                 } finally {
-                    if (fis != null){
+                    if (fis != null) {
                         try {
                             fis.close();
                         } catch (IOException e) {
@@ -172,8 +173,9 @@ public class TeamTipsActivity extends AppCompatActivity implements DialogOnSetNe
                 alertDialog.show();
                 break;
             case R.id.btn_get_team_results:
-                // must be implemented!!!
-                Toast.makeText(this, "team results", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(TeamTipsActivity.this, TeamResultsActivity.class);
+                intent.putExtra(KEY_TEAM_NAME, teamName);
+                startActivity(intent);
                 break;
             case R.id.btn_statistic_line:
                 try {
@@ -184,7 +186,7 @@ public class TeamTipsActivity extends AppCompatActivity implements DialogOnSetNe
                     sb.append("");
                     String text;
 
-                    while ((text = br.readLine()) != null){
+                    while ((text = br.readLine()) != null) {
                         sb.append(text).append("\n");
                     }
                 } catch (FileNotFoundException e) {
@@ -192,7 +194,7 @@ public class TeamTipsActivity extends AppCompatActivity implements DialogOnSetNe
                 } catch (IOException e) {
                     e.printStackTrace();
                 } finally {
-                    if (fis != null){
+                    if (fis != null) {
                         try {
                             fis.close();
                         } catch (IOException e) {

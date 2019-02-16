@@ -5,7 +5,6 @@ import android.app.Application;
 import com.example.paul.betprofessor.model.OneResult;
 import com.example.paul.betprofessor.model.Repository;
 
-import java.util.Collections;
 import java.util.List;
 
 public class SearchForTeamViewModel {
@@ -25,7 +24,6 @@ public class SearchForTeamViewModel {
 
     public List<OneResult> getAllTeamGames() {
 
-        Collections.reverse(findAllTeamGames);
         return findAllTeamGames;
     }
 }
