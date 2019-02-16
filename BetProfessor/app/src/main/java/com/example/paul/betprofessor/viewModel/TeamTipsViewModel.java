@@ -16,9 +16,9 @@ public class TeamTipsViewModel {
 
     private Repository repository;
     private String mTeamName;
-    public List<OneResult> temp;
-    public List<OneResult> findAllTeamGames;
-    public Integer[] allTeamResults;
+    private List<OneResult> temp;
+    private List<OneResult> findAllTeamGames;
+    private Integer[] allTeamResults;
 
     public TeamTipsViewModel(@NonNull Application application, String teamName) {
 

@@ -9,7 +9,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import com.example.paul.betprofessor.R;
 import com.example.paul.betprofessor.ui.helpers.TeamTipsAdapter;
@@ -75,8 +74,8 @@ public class MainActivity extends AppCompatActivity {
 
         switch (item.getItemId()) {
             case R.id.search:
-                // implement
-                Toast.makeText(this, "search was clicked", Toast.LENGTH_SHORT).show();
+                intent = new Intent(MainActivity.this, SearchForTeamActivity.class);
+                startActivity(intent);
                 return true;
             case R.id.results:
                 intent = new Intent(MainActivity.this, ResultActivity.class);

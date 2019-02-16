@@ -43,6 +43,7 @@
     <string name="handicap_statistic">Handicap statistic</string>
     <string name="line_statistic">Line statistic</string>
     <string name="btn_dialog_ok">ok</string>
+    <string name="search_for_team">Team?</string>
 
     <string-array name="arrayOfTeamNames">
         <item>Atlanta Hawks</item>
