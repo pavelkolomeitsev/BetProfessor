@@ -29,4 +29,8 @@ public interface OneResultDao {
 
     @Query("SELECT * FROM results WHERE homeTeamName = :name OR guestTeamName = :name")
     List<OneResult> findAllTeamGames(String name);
+
+    @Query("SELECT * FROM results WHERE (homeTeamName = :firstTeam AND guestTeamName = :secondTeam)" +
+            " OR (homeTeamName = :secondTeam AND guestTeamName = :firstTeam)")
+    List<OneResult> faceToFaceMeetings(String firstTeam, String secondTeam);
 }

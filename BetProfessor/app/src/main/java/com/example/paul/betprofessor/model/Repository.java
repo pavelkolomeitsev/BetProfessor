@@ -27,9 +27,39 @@ public class Repository {
         new InsertOneResultAsyncTask(oneResultDao).execute(oneResult);
     }
 
+    private static class InsertOneResultAsyncTask extends AsyncTask<OneResult, Void, Void> {
+
+        private OneResultDao oneResultDao;
+
+        public InsertOneResultAsyncTask(OneResultDao oneResultDao){
+            this.oneResultDao = oneResultDao;
+        }
+
+        @Override
+        protected Void doInBackground(OneResult... oneResults) {
+            oneResultDao.insert(oneResults[0]);
+            return null;
+        }
+    }
+
     public void update(OneResult oneResult){
 
         new UpdateOneResultAsyncTask(oneResultDao).execute(oneResult);
+    }
+
+    private static class UpdateOneResultAsyncTask extends AsyncTask<OneResult, Void, Void>{
+
+        private OneResultDao oneResultDao;
+
+        public UpdateOneResultAsyncTask(OneResultDao oneResultDao){
+            this.oneResultDao = oneResultDao;
+        }
+
+        @Override
+        protected Void doInBackground(OneResult... oneResults) {
+            oneResultDao.update(oneResults[0]);
+            return null;
+        }
     }
 
     public void delete(OneResult oneResult){
@@ -37,9 +67,39 @@ public class Repository {
         new DeleteOneResultAsyncTask(oneResultDao).execute(oneResult);
     }
 
+    private static class DeleteOneResultAsyncTask extends AsyncTask<OneResult, Void, Void>{
+
+        private OneResultDao oneResultDao;
+
+        public DeleteOneResultAsyncTask(OneResultDao oneResultDao){
+            this.oneResultDao = oneResultDao;
+        }
+
+        @Override
+        protected Void doInBackground(OneResult... oneResults) {
+            oneResultDao.delete(oneResults[0]);
+            return null;
+        }
+    }
+
     public void deleteAllResults(){
 
         new DeleteAllOneResultAsyncTask(oneResultDao).execute();
+    }
+
+    private static class DeleteAllOneResultAsyncTask extends AsyncTask<Void, Void, Void>{
+
+        private OneResultDao oneResultDao;
+
+        public DeleteAllOneResultAsyncTask(OneResultDao oneResultDao){
+            this.oneResultDao = oneResultDao;
+        }
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+            oneResultDao.deleteAllResults();
+            return null;
+        }
     }
 
     public LiveData<List<OneResult>> getLastTwentyResults(){
@@ -80,63 +140,37 @@ public class Repository {
         }
     }
 
-    private static class InsertOneResultAsyncTask extends AsyncTask<OneResult, Void, Void> {
+    public List<OneResult> faceToFaceMeetings(String firstTeam, String secondTeam){
 
-        private OneResultDao oneResultDao;
+        List<OneResult> list = null;
 
-        public InsertOneResultAsyncTask(OneResultDao oneResultDao){
-            this.oneResultDao = oneResultDao;
+        FaceToFaceMeetingsAsyncTask faceToFaceMeetings = new FaceToFaceMeetingsAsyncTask(oneResultDao);
+        faceToFaceMeetings.execute(firstTeam, secondTeam);
+
+        try {
+            list = faceToFaceMeetings.get();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
 
-        @Override
-        protected Void doInBackground(OneResult... oneResults) {
-            oneResultDao.insert(oneResults[0]);
-            return null;
-        }
+        return list;
     }
 
-    private static class UpdateOneResultAsyncTask extends AsyncTask<OneResult, Void, Void>{
+    private static class FaceToFaceMeetingsAsyncTask extends AsyncTask<String, Void, List<OneResult>> {
 
         private OneResultDao oneResultDao;
 
-        public UpdateOneResultAsyncTask(OneResultDao oneResultDao){
+        public FaceToFaceMeetingsAsyncTask(OneResultDao oneResultDao){
+
             this.oneResultDao = oneResultDao;
         }
 
         @Override
-        protected Void doInBackground(OneResult... oneResults) {
-            oneResultDao.update(oneResults[0]);
-            return null;
-        }
-    }
+        protected List<OneResult> doInBackground(String... strings) {
 
-    private static class DeleteOneResultAsyncTask extends AsyncTask<OneResult, Void, Void>{
-
-        private OneResultDao oneResultDao;
-
-        public DeleteOneResultAsyncTask(OneResultDao oneResultDao){
-            this.oneResultDao = oneResultDao;
-        }
-
-        @Override
-        protected Void doInBackground(OneResult... oneResults) {
-            oneResultDao.delete(oneResults[0]);
-            return null;
-        }
-    }
-
-    private static class DeleteAllOneResultAsyncTask extends AsyncTask<Void, Void, Void>{
-
-        private OneResultDao oneResultDao;
-
-        public DeleteAllOneResultAsyncTask(OneResultDao oneResultDao){
-            this.oneResultDao = oneResultDao;
-        }
-
-        @Override
-        protected Void doInBackground(Void... voids) {
-            oneResultDao.deleteAllResults();
-            return null;
+            return oneResultDao.faceToFaceMeetings(strings[0], strings[1]);
         }
     }
 }

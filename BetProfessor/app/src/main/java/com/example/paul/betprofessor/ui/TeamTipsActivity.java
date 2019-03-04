@@ -89,6 +89,7 @@ public class TeamTipsActivity extends AppCompatActivity implements DialogOnSetNe
 
     public void onClick(View view) {
 
+        Intent intent;
         FileInputStream fis = null;
         StringBuilder sb = null;
         AlertDialog alertDialog;
@@ -173,7 +174,7 @@ public class TeamTipsActivity extends AppCompatActivity implements DialogOnSetNe
                 alertDialog.show();
                 break;
             case R.id.btn_get_team_results:
-                Intent intent = new Intent(TeamTipsActivity.this, TeamResultsActivity.class);
+                intent = new Intent(TeamTipsActivity.this, TeamResultsActivity.class);
                 intent.putExtra(KEY_TEAM_NAME, teamName);
                 startActivity(intent);
                 break;
@@ -213,6 +214,10 @@ public class TeamTipsActivity extends AppCompatActivity implements DialogOnSetNe
                             }
                         }).create();
                 alertDialog.show();
+                break;
+            case R.id.btn_ftf_meetings:
+                intent = new Intent(TeamTipsActivity.this, FaceToFaceMeetingsActivity.class);
+                startActivity(intent);
                 break;
         }
     }

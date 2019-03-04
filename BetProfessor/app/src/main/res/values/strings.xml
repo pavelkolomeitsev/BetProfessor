@@ -44,6 +44,16 @@
     <string name="line_statistic">Line statistic</string>
     <string name="btn_dialog_ok">ok</string>
     <string name="search_for_team">Team?</string>
+    <string name="find_all_teams_games">find all team`s games</string>
+    <string name="FTF_meetings">FTF meetings</string>
+    <string name="first_team">First team?</string>
+    <string name="Face_To_Face_Meetings">Face-To-Face Meetings</string>
+    <string name="choose_the_teams">Choose the teams, please</string>
+    <string name="wrong_choice">Wrong choice!</string>
+    <string name="second_team">Second team?</string>
+    <string name="team_results">team results</string>
+    <string name="stats">stats</string>
+    <string name="face_to_face_meetings">face-to-face meetings</string>
 
     <string-array name="arrayOfTeamNames">
         <item>Atlanta Hawks</item>

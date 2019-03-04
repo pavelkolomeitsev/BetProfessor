@@ -9,15 +9,21 @@
         app:showAsAction="never"/>
 
     <item
-        android:id="@+id/input_statistic"
+        android:id="@+id/searchForTeamGames"
         android:orderInCategory="200"
-        android:title="@string/input_statistic"
+        android:title="@string/find_all_teams_games"
         app:showAsAction="never"/>
 
     <item
-        android:id="@+id/search"
-        android:icon="@drawable/ic_search"
-        android:title="@string/search"
-        app:showAsAction="ifRoom"/>
+        android:id="@+id/searchForFaceToFaceMeetings"
+        android:orderInCategory="300"
+        android:title="@string/face_to_face_meetings"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/input_statistic"
+        android:orderInCategory="400"
+        android:title="@string/input_statistic"
+        app:showAsAction="never"/>
 
 </menu>

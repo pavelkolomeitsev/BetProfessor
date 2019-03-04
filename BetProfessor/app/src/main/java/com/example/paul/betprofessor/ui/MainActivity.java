@@ -73,12 +73,16 @@ public class MainActivity extends AppCompatActivity {
         Intent intent;
 
         switch (item.getItemId()) {
-            case R.id.search:
+            case R.id.results:
+                intent = new Intent(MainActivity.this, ResultActivity.class);
+                startActivity(intent);
+                return true;
+            case R.id.searchForTeamGames:
                 intent = new Intent(MainActivity.this, SearchForTeamActivity.class);
                 startActivity(intent);
                 return true;
-            case R.id.results:
-                intent = new Intent(MainActivity.this, ResultActivity.class);
+            case R.id.searchForFaceToFaceMeetings:
+                intent = new Intent(MainActivity.this, FaceToFaceMeetingsActivity.class);
                 startActivity(intent);
                 return true;
             case R.id.input_statistic:
